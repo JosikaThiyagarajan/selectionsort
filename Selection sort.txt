@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int main()
+{
+    int n, m, a[50], i, j, temp;
+    
+    printf("Enter the size of numbers: ");
+    scanf("%d", &m);
+    
+    printf("Enter the numbers: ");
+    for (i = 0; i < m; i++)
+    {
+        scanf("%d", &a[i]);
+    }
+    
+    // sort
+    for (i = 0; i < m; i++)
+    {
+        for (j = i + 1; j < m; j++)  // Start from i + 1 to avoid unnecessary comparisons
+        {
+            if (a[i] < a[j])  // Change to '<' for descending order
+            {
+                temp = a[i];
+                a[i] = a[j];
+                a[j] = temp;
+            }
+        }
+    }
+    
+    printf("Sorted numbers in descending order: ");
+    for (i = 0; i < m; i++)
+    {
+        printf("%d ", a[i]);  // Add a space to separate numbers
+    }
+    
+    return 0;
+}
+
